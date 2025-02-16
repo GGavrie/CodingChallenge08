@@ -87,3 +87,17 @@ console.log(calculateRentalCost(5, "Luxury", false)); // Expected output: "Total
 
 
 
+// Task 5 
+
+
+// Task 5 Loan Payment Calculation
+function calculateLoanPayment(principal, rate, time) {
+    // Calculate the total loan payment using the provided formula
+    const totalPayment = principal + (principal * rate * time);
+    // Return the total payment formatted as a string with two decimal places
+    return "Total Payment: $" + totalPayment.toFixed(2);
+}
+
+// Test Data:
+console.log(calculateLoanPayment(1000, 0.05, 2)); // Expected output: "Total Payment: $1100.00"
+console.log(calculateLoanPayment(5000, 0.07, 3)); // Expected output: "Total Payment: $6050.00"
