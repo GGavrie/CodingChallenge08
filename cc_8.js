@@ -28,3 +28,22 @@ const calculateDiscount = function(price, discountRate) {
 console.log(calculateDiscount(100, 0.2)); 
 console.log(calculateDiscount(250, 0.15)); 
 
+// Task 3 
+// Service Free Calculation 
+const calculateServiceFee = (amount, serviceType) => {
+    const feeRates = {
+        'Premium': 0.15, // 15% discount 
+        'Standard': 0.10, // 10% discount 
+        'Basic': 0.05 // 5% discount 
+    };
+    
+    const rate = feeRates[serviceType];
+    const fee = amount * rate;
+    
+    return `Service Fee: $${fee.toFixed(2)}`;
+};
+
+// Test data
+console.log(calculateServiceFee(200, "Premium")); // Service Fee: $30.00
+console.log(calculateServiceFee(500, "Standard")); // Service Fee: $50.00
+
