@@ -137,3 +137,31 @@ function createCartTracker() {
 let cart = createCartTracker();
 console.log(cart(20)); // Expected output: "Total Cart Value: $20"
 console.log(cart(35)); // Expected output: "Total Cart Value: $55"
+
+
+
+// Task 8 Savings growth projection 
+
+
+function calculateSavings(years, amount) {
+    // Base case: If years is 0, return the amount
+    if (years === 0) {
+      return `Projected Savings: $${amount.toFixed(2)}`;
+    }
+  
+    // If years is greater than 10, cap it at 10
+    if (years > 10) {
+      years = 10;
+    }
+  
+    // Calculate the savings for the current year (5% increase)
+    const savings = amount * 0.05;
+    const newAmount = amount + savings;
+  
+    // Recursive call with one less year and the updated amount
+    return calculateSavings(years - 1, newAmount);
+  }
+  
+  // Test Data:
+  console.log(calculateSavings(8, 1000)); // Expected output: "Projected Savings: $1477.46"
+  console.log(calculateSavings(5, 5000)); // Expected output: "Projected Savings: $6381.41"
